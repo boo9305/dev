@@ -20,17 +20,20 @@ func main() {
     fmt.Println(s2)
 
     
-    s3 := make([]int, 0,3)
+    s3 := make([]int, 2,3)
+
+    
+    s3[0] = 3
 
     for i := 1 ;i<=15;i++ {
         s3 = append(s3,i)
         fmt.Println(len(s3), cap(s3))
     }
 
-    s4 := []int{1,2,3}
-    s5 := []int[4,5,6}
+    //s4 := []int{1,2,3}
+    //s5 := []int[4,5,6}
     
-    s4 = append(s4, s5...)
+    //s4 = append(s4, s5...)
 
 
 
