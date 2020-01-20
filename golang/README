@@ -1,5 +1,10 @@
 golang 
 
+- What's the difference between make([]int,0,1) and a = []int?
+  []int -> nil
+  make([]int,0,1) -> no nil
+ 
+
 - File IO
   - How to read large file?
     MaxScanTokenSize = 64 * 1024 // Scanner
