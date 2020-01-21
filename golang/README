@@ -1,9 +1,19 @@
 golang 
+-referance 
+    https://golangkorea.github.io/post/go-start/object-oriented/
+    https://golang.site
+- oop
+    - private / public 
+        start character lower , upper
+        public : Method()
+        private : method() 
+    - Inheritance
+        composition style - embedding
+        * oop/smartphone.go
 
 - What's the difference between make([]int,0,1) and a = []int?
   []int -> nil
   make([]int,0,1) -> no nil
- 
 
 - File IO
   - How to read large file?
@@ -11,4 +21,4 @@ golang
     
     Solution = Have to use bufio.Reader.ReadLine
 
-- Inter face 
+- Interface 
