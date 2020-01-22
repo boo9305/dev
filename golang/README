@@ -18,7 +18,9 @@ golang
 - File IO
   - How to read large file?
     MaxScanTokenSize = 64 * 1024 // Scanner
-    
-    Solution = Have to use bufio.Reader.ReadLine
+    buf := make([]byte,1024) // sanner change buf size automatically
+    scanner.Buffer(buf, 1024 * 1024 * 1024) // updated larger token size
+
+    // X Solution = Have to use bufio.Reader.ReadLine
 
 - Interface 
