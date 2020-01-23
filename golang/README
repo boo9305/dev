@@ -15,12 +15,17 @@ golang
   []int -> nil
   make([]int,0,1) -> no nil
 
-- File IO
-  - How to read large file?
-    MaxScanTokenSize = 64 * 1024 // Scanner
-    buf := make([]byte,1024) // sanner change buf size automatically
-    scanner.Buffer(buf, 1024 * 1024 * 1024) // updated larger token size
-
-    // X Solution = Have to use bufio.Reader.ReadLine
-
+- File 
+    - How to read large file?
+        MaxScanTokenSize = 64 * 1024 // Scanner
+        buf := make([]byte,1024) // sanner change buf size automa
+        scanner.Buffer(buf, 1024 * 1024 * 1024) // updated larger token size
+    - *TEST Bufio Read Speed
+        (1.8G file read)
+        1. Read 0.28 -> string 변환 0.78
+        2. ReadBytes 0.95 -> string 변환 1.3
+        3. ReadString 1.3 
+        4. ReadSlice 0.899
+        5. Scan 0.51
+        
 - Interface 
