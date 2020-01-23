@@ -51,7 +51,12 @@ func ReadScanner() {
         fmt.Print(err)
     }
 
+
     scanner := bufio.NewScanner(file)
+    buf := make([]byte,1024)
+    maxToken := 1024 *1024 *1024
+    scanner.Buffer(buf, maxToken)
+
     for scanner.Scan() {
         fmt.Println(scanner.Text())
     }

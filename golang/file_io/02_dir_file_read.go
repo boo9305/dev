@@ -9,8 +9,6 @@ import (
     "io/ioutil"
 )
 
-
-
 func ReadFile(path string) {
     file, err := os.Open(path)
 
@@ -67,13 +65,4 @@ func main() {
     }
 
 }
-
-
-
-
-
-
-
-
-
 
