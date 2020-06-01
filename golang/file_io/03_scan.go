@@ -18,7 +18,7 @@ func ScanFile(file_name string) {
     scanner := bufio.NewScanner(file)
     buf := make([]byte, 1024)
     maxTokenSize := 1024 *1024 *1024
-    scanner.Buffer(1024, maxTokenSize)
+    scanner.Buffer(buf, maxTokenSize)
     
     for scanner.Scan() {
         _ = scanner.Text()

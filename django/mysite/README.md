@@ -1,0 +1,10 @@
+<h1>Session</h1>
+
+SESSION_COOKIE_AGE = 5
+SESSION_SAVE_EVERY_REQUEST = True
+
+
+<h1></h1>
+
+
+

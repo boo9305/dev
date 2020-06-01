@@ -1,0 +1,10 @@
+<h1>POST</h1>
+
+<ul>
+    {% for p in post %}
+    <li>
+        <a href="{% url 'blog:post_detail' p.id %}">{{ p.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
