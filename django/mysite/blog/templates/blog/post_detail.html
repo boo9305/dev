@@ -1,7 +1,9 @@
 <h1>POST DETAIl</h1>
 
-<p1>{{ post.title }}</p1>
-<p1>{{ post.main }}</p1>
 
 <p1>{{ post_detail.title }}</p1>
 <p1>{{ post_detail.main }}</p1>
+<p1>{{ post_detail.create_date }}</p1>
+
+<a href="{% url 'blog:post_edit' post_detail.id  %}">Edit</a>
+<a href="{% url 'blog:post_delete' post_detail.id  %}">Delete/a>

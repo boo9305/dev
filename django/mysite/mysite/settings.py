@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
         'localhost',
+        '3.34.134.21',
         'ec2-3-34-134-21.ap-northeast-2.compute.amazonaws.com',
         ]
 
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +129,6 @@ STATIC_URL = '/static/'
 SESSION_COOKIE_AGE = 3000
 SESSION_SAVE_EVERY_REQUEST = True
 
+LOGIN_REDIRECT_URL = '/blog'
+
+#AUTH_USER_MODEL = 'blog.User'

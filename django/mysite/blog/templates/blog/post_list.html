@@ -1,0 +1,11 @@
+<h1>POST</h1>
+
+<ul>
+    {% for p in post %}
+    <li>
+        <a href="{% url 'blog:post_detail' p.id %}">{{ p.title }} {{ p.create_date }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'blog:post_create'  %}">post create</a>
