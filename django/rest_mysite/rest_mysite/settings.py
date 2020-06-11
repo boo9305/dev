@@ -25,7 +25,7 @@ SECRET_KEY = '1)%cpze0d_lrk9a7j#0o_3ljqs7_hn=yo272lr)n)ttgree%8u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.34.134.21' , 'ec2-3-34-134-21.ap-northeast-2.compute.amazonaws.com',]
+ALLOWED_HOSTS = ['3.34.100.138' , 'ec2-3-34-134-21.ap-northeast-2.compute.amazonaws.com',]
 
 
 # Application definition
@@ -117,9 +117,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ]
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+
 
 STATIC_URL = '/static/'
 

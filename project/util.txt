@@ -1,0 +1,3 @@
+sudo -i
+echo 1048576 > /proc/sys/fs/inotify/max_user_watches
+exit

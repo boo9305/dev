@@ -10,8 +10,7 @@ class MyPostList extends React.Component {
     }
 
     componentDidMount() {
-        console.log("k")
-        axios.get(`http://3.34.134.21:8000/api/post/`)
+        axios.get(`http://3.34.100.138:8000/api/post/`)
             .then(res => {
                 this.setState({
                     posts : res.data
@@ -20,11 +19,13 @@ class MyPostList extends React.Component {
     }
 
     render() {
+        console.log("mplv render");
+        console.log(this.state.posts.length)
         return (
             <div>
             <MyPost data={this.state.posts} />
             <h2>Create Post</h2>
-            <MyForm />
+            <MyForm requestType="post" postID={null} bntType="Create" />
             </div>
         )
     

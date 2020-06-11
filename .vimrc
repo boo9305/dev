@@ -66,6 +66,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
