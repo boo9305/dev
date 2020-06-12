@@ -4,7 +4,7 @@ import store from '../store'
 const Footer = (props) => {
     return (
         <div>
-            <input type="text" value={props.cnt}/>
+            <input type="text" value={props.token}/>
         </div>
     )
 };

@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 function mapReduxStateToReactProps(state) {
     return {
-        cnt : state.number
+        token : state.token
     }
 }
 
