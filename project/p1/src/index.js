@@ -8,7 +8,11 @@ import {Provider} from 'react-redux'
 
 import reducer from './store/reducers/auth' 
 
-const store = createStore(reducer, applyMiddleware(thunk))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, /* preloadedState, */ composeEnhancers(
+    applyMiddleware(thunk)
+));
+
 
 const app = ( 
     <Provider store={store}>
@@ -17,6 +21,7 @@ const app = (
 )
 
 ReactDOM.render(
+
     app,document.getElementById('root')
 );
 

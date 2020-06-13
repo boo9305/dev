@@ -26,6 +26,9 @@ class MyForm extends React.Component {
                 })
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
+                break;
+            default :
+                break;
         }
            
         window.location.reload()

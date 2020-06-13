@@ -6,6 +6,8 @@ import BaseRouter from './routes'
 
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
+import { connect } from 'react-redux'
+
 class App extends Component {
     render() {
         return (
@@ -19,6 +21,14 @@ class App extends Component {
         );
     }
 }
+
+const mapReduxStateToReactProps = state => {
+    return {
+        isAuthenticated : state.token !== null
+    }
+}
+
+export default connect(mapReduxStateToReactProps, null)(App)
 
 // import axios from 'axios'
     // constructor(props) {
@@ -58,4 +68,4 @@ class App extends Component {
     //     )
     //
     // }
-export default App;
+//export default App;

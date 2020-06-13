@@ -1,22 +1,20 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 import { connect } from 'react-redux'
 
-import actions from '../store/actions/auth.js'
+import { authLogin } from '../store/actions/auth.js'
+// import actionTypes from '../store/actions/actionTypes'
 
 class NormalLoginForm extends React.Component {
-
-    
-  onFinish = values => {
-      console.log('Received values of form: ', values);
-      console.log(this.props)
-      this.props.onAuth(values.username, values.password);
-  };
-
+    onFinish = values => {
+        console.log('Received values of form: ', values);
+        console.log(values.username, values.password)
+        this.props.onAuth(values.username, values.password);
+    };
     render() {
         return (
             <Form
@@ -42,24 +40,23 @@ class NormalLoginForm extends React.Component {
                     />
                 </Form.Item>
 
-              <Form.Item>
-                  <Button type="primary" htmlType="submit" className="login-form-button">
-                      Log in
-                  </Button>
-                  Or
-                  <Link to='/signup/'>
-                      Sign up
-                  </Link>
-              </Form.Item>
-          </Form>
-      );
-  }
+                <Form.Item>
+                    <Button type="primary" htmlType="submit" className="login-form-button">
+                        Log in
+                    </Button>
+                    Or
+                    <Link to='/signup/'>
+                        Sign up
+                    </Link>
+                </Form.Item>
+            </Form>
+        );
+    }
 }
 
-
-const mapReduxDispatchToReactProps = dispatch => {
+function mapReduxDispatchToReactProps (dispatch) {
     return {
-        onAuth: (username,password) => dispatch(actions.authLogin(username,password))
+         onAuth: (username,password) => dispatch(authLogin(username,password))
     }
 }
 
