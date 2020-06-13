@@ -3,34 +3,56 @@ import MyPost from '../components/MyPost.js'
 import axios from "axios"
 
 import MyForm from '../components/Form'
+
+import { connect } from 'react-redux'
+
 class MyPostList extends React.Component {
     state = {
-        posts : [
-        ] 
+        posts: [
+        ]
     }
 
     componentDidMount() {
-        axios.get(`http://3.34.100.138:8000/api/post/`)
-            .then(res => {
-                this.setState({
-                    posts : res.data
+        if (this.props.token) {
+            axios.get(`http://3.34.100.138:8000/api/post/`)
+                .then(res => {
+                    this.setState({
+                        posts: res.data
+                    })
                 })
-            })
+        }
     }
 
     render() {
         console.log("mplv render");
         console.log(this.state.posts.length)
+        console.log("mplv token : ", this.props.token)
         return (
             <div>
-            <MyPost data={this.state.posts} />
-            <h2>Create Post</h2>
-            <MyForm requestType="post" postID={null} bntType="Create" />
+                {
+                    this.props.token ?
+                    <div>
+                        <MyPost data={this.state.posts} />
+                        <h2>Create Post</h2>
+                        <MyForm requestType="post" postID={null} bntType="Create" />
+                    </div>
+                    :
+                    <p>Please Login</p>
+                     
+                }
+
             </div>
+
         )
-    
+
     }
 }
 
-export default MyPostList
+const mapReduxStateToReactProps = state => {
+    return {
+        token: state.token
+    }
+}
+
+export default connect(mapReduxStateToReactProps, null)(MyPostList)
 

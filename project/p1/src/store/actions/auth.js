@@ -21,7 +21,8 @@ export const authFail = error => {
 }
 
 export const logout = () => {
-    localStorage.removeItem('user')
+    console.log("action logout")
+    localStorage.removeItem('token')
     localStorage.removeItem('expirationDate')
     return {
         type : actionTypes.AUTH_LOGOUT
@@ -39,6 +40,7 @@ export const checkAuthTimeOut = expirationTime => {
 
 export const authLogin = (username, password) => {
     return dispatch => {
+        console.log("authLogin... ", username, password)
         dispatch(authStart());
         axios.post('http://3.34.100.138:8000/rest-auth/login/', {
             username : username,
@@ -50,10 +52,28 @@ export const authLogin = (username, password) => {
             localStorage.setItem('expirationDate', expirationDate)
             dispatch(authSuccess(token))
             dispatch(checkAuthTimeOut(3600))
-
         }).catch(err => {
             dispatch(authFail(err))
+            console.log("login error")
         })
     }
 }
 
+export const authCheckState = () => {
+    return dispatch => {
+        console.log("authCheckState...")
+        const token = localStorage.getItem("token")
+        if (token === undefined) {
+            dispatch(logout())
+        } else {
+            const expirationDate = new Date(localStorage.getItem("expirationDate"))
+            if ( expirationDate <= new Date()) {
+                dispatch(logout())
+            } else {
+                dispatch(authSuccess(token))
+                dispatch(checkAuthTimeOut((expirationDate.getTime() - new Date()) / 1000 ));
+            }
+        }
+    }
+
+}

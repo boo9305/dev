@@ -4,7 +4,7 @@ import '../css/Layout.css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import logout from '../store/actions/auth'
+import * as actions  from '../store/actions/auth'
 
 
 const { Header, Content, Footer } = Layout;
@@ -43,7 +43,9 @@ class MyLayout extends React.Component {
 
 const mapReduxDispatchToReactProps = (dispatch) => {
     return {
-        logout : () => dispatch(logout())
+        logout : () => {
+            dispatch(actions.logout())
+        }
     }
 }
 

@@ -8,12 +8,19 @@ import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 import { connect } from 'react-redux'
 
+import { authCheckState } from './store/actions/auth'
+
 class App extends Component {
+
+    componentDidMount() {
+        this.props.onTryAutoSignup();
+    }
+
     render() {
         return (
             <Router>
             <div className="App">
-            <MyLayout>
+             <MyLayout {...this.props}>
                 <BaseRouter></BaseRouter>
             </MyLayout>
             </div>
@@ -28,7 +35,14 @@ const mapReduxStateToReactProps = state => {
     }
 }
 
-export default connect(mapReduxStateToReactProps, null)(App)
+const mapReduxDispatchToReactProps = dispatch => {
+    return {
+        onTryAutoSignup : () => dispatch(authCheckState())
+
+    }
+
+}
+export default connect(mapReduxStateToReactProps, mapReduxDispatchToReactProps)(App)
 
 // import axios from 'axios'
     // constructor(props) {
