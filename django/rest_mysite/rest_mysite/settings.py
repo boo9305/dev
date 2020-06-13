@@ -32,8 +32,19 @@ ALLOWED_HOSTS = ['3.34.100.138' , 'ec2-3-34-134-21.ap-northeast-2.compute.amazon
 
 INSTALLED_APPS = [
     'rest_blog',
-    'rest_framework',
     'corsheaders',
+    
+    'rest_auth',
+    'rest_auth.registration',
+
+    'rest_framework',
+    'rest_framework.authtoken',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,5 +143,11 @@ REST_FRAMEWORK = {
 
 STATIC_URL = '/static/'
 
+# CORS OPTION
 CORS_ORIGIN_ALLOW_ALL = True;
+
+# ALLAUTH OPTION
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
 
