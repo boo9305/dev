@@ -45,6 +45,7 @@ const mapReduxDispatchToReactProps = (dispatch) => {
     return {
         logout : () => {
             dispatch(actions.logout())
+            //window.location.reload();
         }
     }
 }

@@ -29,6 +29,8 @@ export const logout = () => {
     }
 }
 
+
+
 export const checkAuthTimeOut = expirationTime => {
     return dispatch => {
         setTimeout(() => {
@@ -38,11 +40,13 @@ export const checkAuthTimeOut = expirationTime => {
     }
 }
 
+
 export const authLogin = (username, password) => {
     return dispatch => {
         console.log("authLogin... ", username, password)
         dispatch(authStart());
         axios.post('http://3.34.100.138:8000/rest-auth/login/', {
+        //axios.post('http://localhost:8000/rest-auth/login/', {
             username : username,
             password : password
         }).then(res => {
