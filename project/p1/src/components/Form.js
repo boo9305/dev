@@ -2,6 +2,8 @@ import React  from 'react';
 import axios from "axios"
 import { Form, Input, Button } from 'antd';
 
+import {connect} from 'react-redux'
+
 class MyForm extends React.Component {
 
     onFinish = ( values , request , postID)  => {
@@ -12,6 +14,13 @@ class MyForm extends React.Component {
 
         switch(request) {
             case "post" :
+                axios.defaults.headers = {
+                    "Content-Type" : "application/json",
+                    Authorization : this.props.token
+                }    
+                console.log("token " ,this.props.token)
+                console.log(axios.defaults)
+
                 axios.post('http://3.34.100.138:8000/api/post/', {
                     title : _title, 
                     desc : _desc
@@ -20,6 +29,10 @@ class MyForm extends React.Component {
                 .catch(err => console.log(err))
                 break;
             case "put" :
+                axios.defaults.headers = {
+                    "Content-Type" : "application/json",
+                    Authorization : this.props.token
+                }
                 axios.put(`http://3.34.100.138:8000/api/post/${postID}/`, {
                     title : _title, 
                     desc : _desc
@@ -70,5 +83,11 @@ class MyForm extends React.Component {
   )}
 };
 
+const mapReduxStateToReactProps = state => {
+    return {
+        token : state.token
+    }
+}
 
-export default MyForm
+
+export default connect(mapReduxStateToReactProps,null)(MyForm)

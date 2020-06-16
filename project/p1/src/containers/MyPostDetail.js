@@ -32,7 +32,7 @@ class MyPostDetail extends React.Component {
     }
 
     render() {
-        console.log("mpd render")
+        console.log("MyPostDetail render")
 
         return (
             <div>

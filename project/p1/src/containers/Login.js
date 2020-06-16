@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
@@ -93,5 +93,5 @@ function mapReduxDispatchToReactProps(dispatch) {
     }
 }
 
-export default connect(mapReduxStateToReactProps, mapReduxDispatchToReactProps)(NormalLoginForm)
+export default withRouter(connect(mapReduxStateToReactProps, mapReduxDispatchToReactProps)(NormalLoginForm))
 
