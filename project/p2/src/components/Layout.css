@@ -1,0 +1,87 @@
+
+body { 
+    background : linear-gradient(to right, #002762, #005693); 
+    font-family : "Sans-Serif";
+}
+
+body > div {
+    display:block;
+
+}
+
+
+.header {
+    display:block;
+    /* display: block; */
+    /* width : 800px; */
+    /* height: 100px; */
+    /*  */
+    /* margin : 0 auto; */
+
+}
+
+* {
+    margin : 0px;
+    padding : 0px;
+}
+
+.header > div {
+}
+
+.left {
+    float: left;
+    padding : 50px 0 0 50px;
+}
+
+.right {
+    float: right;
+    padding : 50px 50px 0px 0px;
+    
+}
+.left > div {
+    float: left;
+    width: 100px;
+    height: 50px;
+    display: block;
+    /* border: 1px solid #ffffff; */
+    padding: 0 100px 0 0px;
+    color : #ffffff;
+    line-height:50px;
+}
+.right > div {
+    float : right;
+    width: 100px;
+    height: 50px;
+    display: block;
+    color: #ffffff;
+    line-height:50px;
+}
+
+.left > ul {
+    float : left;
+}
+
+.left > ul > li {
+    float : left;
+    list-style:none;
+    padding: 0 50px 0 0px;
+}
+
+.left > ul > li > a {
+    border : 1px solid #000000;
+    line-height:50px;
+    display:block;
+    height:50px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration:none;
+    position:relative;
+}
+
+.left > ul > li > a:before { content:""; position:absolute; width:0%; left:0px; bottom:0px; height:1px;  background:#fff; transition: width 0.5s;}
+.left > ul > li > a:hover:before { width:100%; }
+
+
+.section_1 {} 
+    
+/* display:block; border:1px solid #ffffff; height:1px; width: 100%;} */
