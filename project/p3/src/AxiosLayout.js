@@ -56,17 +56,18 @@ const AxiosLayout = (props) => {
         }).then(res => { console.log(res) })
             .catch(err => { console.log(err) })
     }
+
     return (
         <div>
             <div>
-                <NavLink to='/login/'>Login</NavLink>
+                <NavLink to='/login'>Login</NavLink>
             </div>
             <div>
                 <NavLink to='/'>PostList</NavLink>
             </div>
             <hr/>
             <Switch>
-                <Route exact path='/Login/' ><Login handleLogin={handleLogin} handleLogout={handleLogout} token={token}></Login></Route>
+                <Route exact path='/Login' ><Login handleLogin={handleLogin} handleLogout={handleLogout} token={token}></Login></Route>
                 <Route exact path='/' render={() => (
                     <PostList 
                         handlePostList={handlePostList} 
@@ -75,7 +76,9 @@ const AxiosLayout = (props) => {
                         post={post}/>
                     )}>
                 </Route>
-                <Route exact path='/post/:postID/'><PostDetail token={token}></PostDetail></Route>
+                <Route exact path='/post/:postID' render={() => (
+                    <PostDetail token={token}></PostDetail> )}>
+                </Route>
             </Switch>
             <hr/>
          

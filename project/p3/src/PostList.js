@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 export default (props) => {
-    props.handlePostList()
+    useEffect(()=>{
+        if (props.post.length === 0) {
+            props.handlePostList()
+        }
+    })
 
     return (
         <div>
+            {console.log("list render")}
             {
                 props.token ?
                 <div>
