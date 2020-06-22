@@ -8,9 +8,9 @@ import axios from 'axios'
 // axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  /* <React.StrictMode> */
+    <App />,
+  /* </React.StrictMode>, */
   document.getElementById('root')
 );
 

@@ -26,9 +26,9 @@ const PostDetail = (props) => {
 
     return(
         <div>  
-            {post.title}
-            {post.contents}
-            
+            title : {post.title}
+            <hr/>
+            contents : {post.contents}
         </div>
     )
 }

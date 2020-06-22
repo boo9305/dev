@@ -11,8 +11,8 @@ export default (props, history) => {
                     //history.push('/')
                    
                 }}>
-                    <input type='text' name='username' />
-                    <input type='password' name='password' />
+                    <input type='text' name='username' value='join'/>
+                    <input type='password' name='password' value='rlawlghks'/>
                     <input type='submit' value="login"></input>
                 </form>
 
