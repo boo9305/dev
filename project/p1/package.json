@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "antd": "^4.3.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
     "markdown-to-jsx": "^6.11.4",
     "react": "^16.13.1",
